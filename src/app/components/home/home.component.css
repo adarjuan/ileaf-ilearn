@@ -1,0 +1,11 @@
+#start-quiz-btn {
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+}
+
+#start-quiz-btn:hover {
+    cursor: pointer;
+}

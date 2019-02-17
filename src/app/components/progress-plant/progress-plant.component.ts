@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'progress-plant',
@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ProgressPlantComponent implements OnInit {
 
-  count: number = 0;
+  count: number = -1;
 
   progress = [
     '../../assets/images/plant01.png', 
@@ -25,9 +25,18 @@ export class ProgressPlantComponent implements OnInit {
   }
 
   grow() {
-    this.url = this.progress[this.count];
-    this.count++;
-    if (this.count == 3) this.count = 0;    
+    this.url = this.progress[++this.count];
   }
+
+  isReadyToChoosePlant() {
+    console.log('plant', (this.count == 2))
+    return (this.count == 2);
+  }
+
+  resetPlant() {
+    this.count = -1;
+    this.url = '';
+  }
+
 
 }

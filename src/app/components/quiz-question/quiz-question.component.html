@@ -7,9 +7,24 @@
       <div class="choice-wrapper" 
         [ngClass]="{'shake': wrongAnswer == i}"
         *ngFor="let choice of questionData.choices; let i = index;"
+
         (click)="checkIfCorrectAnswer(choice, i)">
-          <p>{{ choice.text }}</p>
-          <img [src]=choice.img_path width=300>
+
+        <div class="wrapper-lg" 
+          *ngIf="choice.img_path">
+          <div class="choice-img-text">
+              <p>{{ choice.text }}</p>
+              <img class="choice-img" [src]=choice.img_path>
+          </div>
+        </div>
+
+        <div class="wrapper-sm"
+          *ngIf="!choice.img_path">
+            <div class="choice-text" *ngIf="!choice.img_path">
+                <p style="max-width: 200px; margin: auto;">{{ choice.text }}</p>
+            </div>
+        </div>
+
       </div>
     
     </div>

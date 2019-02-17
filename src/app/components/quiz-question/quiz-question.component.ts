@@ -38,7 +38,7 @@ export class QuizQuestionComponent implements OnInit {
 
   checkIfCorrectAnswer(choice, index) {
     if (this.wrongAnswer != index) {
-      if (choice.is_correct) {
+      if (choice.correct_answer) {
         this.correctAnswerChosen.emit();
       } else {
         this.shake(index)

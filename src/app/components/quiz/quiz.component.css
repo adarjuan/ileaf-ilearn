@@ -23,14 +23,21 @@
 
 .terrariumBowlOptions {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     grid-gap: 20px;
     height: 150px;
+    padding: 20px;
 }
 
+<<<<<<< HEAD
 .terrariumBowlOption {
     background-color: rgb(223, 248, 246);
     border: 1px solid rgb(203, 224, 223);
+=======
+.plantOptions {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+>>>>>>> aafee5696ab9889076c5c31fa5bf4bd91f749dbf
 }
 
 .modal {
@@ -49,7 +56,7 @@
     margin: 15px auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
     max-width: 800px;
   }
 

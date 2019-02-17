@@ -12,21 +12,40 @@
   <progress-plant #plant [@fadeInOut]></progress-plant>
 </div>
 
-<congrats *ngIf="showCongratsPage"></congrats>
+<!-- <congrats *ngIf="showCongratsPage"></congrats> -->
 
-<!-- Choose Terrarium Modal -->
-<div [@fadeInOut] id="chooseTerrariumModal" class="modal">
+<!-- Terrarium Modal -->
+<div [@fadeInOut] id="terrariumModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title">Before you learn more...</h4>
+        <h4 [hidden]="currentIndex > 0" class="modal-title">Before you learn more...</h4>
+        <h4 *ngIf="currentIndex > 0 && !showCongratsPage" class="modal-title">Add a plant! (click on a plant to add it)</h4>
+        <h4 [hidden]="!showCongratsPage" class="modal-title">Congratulations! You completed the quiz!</h4>
       </div>
       <div class="modal-body">
-        <p>Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
-        <div id="selectedTerrariumBowl"></div>
-        <div class="terrariumBowlOptions">
-            <div *ngFor="let bowl of terrariumBowls" class="terrariumBowlOption">
+        <p *ngIf="currentIndex < 0">Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
+        <p *ngIf="showCongratsPage">Here is your finished terrarium (it looks beautiful)</p>
+
+        <terrarium-canvas [canvasVisible]="canvasVisible"
+          [teraOption]="selectedTera" [plantOption]="selectedPlant"></terrarium-canvas>
+        
+        <div [hidden]="currentIndex > 0" class="terrariumBowlOptions">
+            <div *ngFor="let tera of teras" 
+                class="terrariumBowlOption" 
+                [class.selected]="tera === selectedTera"
+                (click)="teraOnSelect(tera)">
+                    <img [src] = "tera.imgsrc" width=150 style="margin: auto">
             </div>
         </div>
+
+        <div [hidden]="currentIndex < 0 || showCongratsPage" class="plantOptions">
+            <div *ngFor="let plant of plants" 
+                [class.selected]="plant === selectedPlant"
+                (click)="plantOnSelect(plant)">
+                    <img [src]= "plant.imgsrc" width=135 >
+            </div>
+        </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" id="terra-close" class="btn btn-outline-dark" (click)="closeChooseTerrariumModal()">Close</button>

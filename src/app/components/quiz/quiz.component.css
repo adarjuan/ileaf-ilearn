@@ -18,11 +18,7 @@ body {
 
 .plantOptions {
   display: grid;
-  grid-template-columns: repeat(5, auto);
-}
-
-.terrariumBowlOption {
-    /* background-color: aliceblue; */
+  grid-template-columns: repeat(3, auto);
 }
 
 .modal {
@@ -42,7 +38,7 @@ body {
     margin: 15px auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
     max-width: 800px;
   }
   

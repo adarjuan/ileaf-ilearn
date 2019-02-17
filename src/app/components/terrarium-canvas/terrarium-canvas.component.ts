@@ -10,17 +10,19 @@ import * as p5 from 'p5';
 export class TerrariumCanvasComponent implements OnInit {
   @Input('plantOption') plantOption;
   @Input('teraOption') teraOption;
+  @Input('canvasVisible') canvasVisible;
 
   myP5: any;
   constructor() { }
 
-ngOnInit() {
-  this.myP5 = new p5(this.sketch)
-}
+  ngOnInit() {
+    this.myP5 = new p5(this.sketch)
+  }
 
 sketch = (p: any) => {
-    var x = 1000;
-    var y = 300;
+  console.log('new sketch')
+    var x;
+    var y;
     var startX = 0;
     var startY = 0;
     var plantSrcs = ["assets/images/plant1.PNG", "assets/images/plant2.PNG", "assets/images/plant3.PNG",
@@ -30,7 +32,7 @@ sketch = (p: any) => {
     var teraImages = [];
     var plantIndx;
     var canvas;
-    
+    var imagePositions = []
 
     p.preload = () => {
         for(let i = 0; i < plantSrcs.length; i++)
@@ -44,38 +46,62 @@ sketch = (p: any) => {
     }
     
     p.setup = () => { 
-      canvas = p.createCanvas( 600, 400);
+      canvas = p.createCanvas( p.windowWidth *.45, 400);
       canvas.parent("terrarium");
+      x = 0;
+      y = 50;
     } 
     
     p.draw = () => { 
       p.background(220);
-      if (this.teraOption != null)
-      {
+
+      if (this.teraOption != null) {
         p.background(teraImages[this.teraOption.id - 1]);
       }
-      if (this.plantOption != null)
-      {
-        console.log(this.plantOption.name);
+      for (let i = 0; i < imagePositions.length; i++) {
+        p.image(imagePositions[i].image, 
+            imagePositions[i].x, 
+            imagePositions[i].y, 
+            imagePositions[i].image.width / 3, 
+            imagePositions[i].image.height / 3);
+      }
+      if (this.plantOption != null) {
         plantIndx = this.plantOption.id - 1;
-        p.image(plantImages[plantIndx], x, y);
+        var img = plantImages[plantIndx];
+        console.log(x, y)
+        
+        p.image(img, x, y, img.width / 3, img.height / 3);
       }
 
     }
     
     p.mousePressed = () => {
-      startX = p.mouseX;
-      startY = p.mouseY;
+      if (this.canvasVisible) {
+        startX = p.mouseX;
+        startY = p.mouseY;
+
+      } else if (plantIndx) {
+        imagePositions.push(
+          {
+            "image": plantImages[plantIndx], 
+            "x": x, 
+            "y": y
+          });
+          plantIndx = null;
+      }
+
     }
     
     p.mouseDragged = () => {
-      var diffx = startX - p.mouseX;
-      x = x - diffx;
-      startX = p.mouseX;
+      if (this.canvasVisible) {
+        var diffx = startX - p.mouseX;
+        x = x - diffx;
+        startX = p.mouseX;
 
-      var diffy = startY - p.mouseY;
-      y = y - diffy;
-      startY = p.mouseY;
+        var diffy = startY - p.mouseY;
+        y = y - diffy;
+        startY = p.mouseY;
+      }
     }
 
   }

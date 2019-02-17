@@ -48,9 +48,11 @@ export class QuizComponent implements OnInit {
   showCongratsPage = false;
 
   quizData = data;
-  
+
   selectedTera: Tera;
   selectedPlant: Plant;
+
+  canvasVisible = false;
 
   currentIndex = -1;
   constructor(private modalService: NgbModal) {}
@@ -59,10 +61,8 @@ export class QuizComponent implements OnInit {
     this.openTerrariumModal();
   }
 
-
   teraOnSelect(t: Tera): void {
     this.selectedTera = t;
-
   }
 
   plantOnSelect(p): void {
@@ -87,21 +87,19 @@ export class QuizComponent implements OnInit {
 
   openTerrariumModal() {
     document.getElementById('terrariumModal').style.display = "block";
+    this.canvasVisible = true;
   }
 
   closeTerrariumModal() {
+    this.canvasVisible = false;
     document.getElementById('terrariumModal').style.display = "none";
-    this.currentIndex = 0; // show first question
-  }
 
-  openChoosePlantModal() {
-    document.getElementById('choosePlantModal').style.display = "block";
-  }
-
-  closeChoosePlantModal() {
-    document.getElementById('choosePlantModal').style.display = "none";
-    this.nextQuestion();
-    this.progressPlant.resetPlant();
+    if (this.currentIndex < 0) {
+      this.currentIndex = 0; // show first question
+    } else {
+      this.nextQuestion();
+      this.progressPlant.resetPlant();
+    }
   }
 
   nextQuestion() {
@@ -109,8 +107,14 @@ export class QuizComponent implements OnInit {
       ++this.currentIndex;
     } else {
       this.showCongratsPage = true;
+      this.openTerrariumModal();
+      this.showCongratsPagee();
     }
       
+  }
+
+  showCongratsPagee() {
+
   }
 
 }

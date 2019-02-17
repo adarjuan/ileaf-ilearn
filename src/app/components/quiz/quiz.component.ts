@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+
 import {style, animate, transition, trigger} from '@angular/animations';
+import { Component, OnInit, Input } from '@angular/core';
+import { AnswerComponent } from '../answer/answer.component';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @Component({
   selector: 'quiz',
@@ -14,6 +19,7 @@ import {style, animate, transition, trigger} from '@angular/animations';
   ],
 })
 export class QuizComponent implements OnInit {
+
   show = true;
 
   testQuestionsArray = [
@@ -40,7 +46,8 @@ export class QuizComponent implements OnInit {
           img_path: "https://images-na.ssl-images-amazon.com/images/I/71tWox9rkhL._SX425_.jpg",
           is_correct: false
         },
-      ]
+      ],
+      explanation: "stuff like food items, soiled paper containers, and blah blah blah can be composted!"
     }, 
     {
       question: "this is question number 2!!",
@@ -65,7 +72,8 @@ export class QuizComponent implements OnInit {
           img_path: "https://images-na.ssl-images-amazon.com/images/I/71tWox9rkhL._SX425_.jpg",
           is_correct: false
         },
-      ]
+      ],
+      explanation: "supercalifragilisticexpialidocious"
     }, 
     {
       question: "question number 3!",
@@ -90,19 +98,23 @@ export class QuizComponent implements OnInit {
           img_path: "https://images-na.ssl-images-amazon.com/images/I/71tWox9rkhL._SX425_.jpg",
           is_correct: false
         },
-      ]
+      ],
+      explanation: "blha blasdfj alsdjf eiwojfdsaklfj asdjf klasjdf asdf 9sdf asd"
     }, 
   ]
 
   currentIndex = 0;
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit() {
   }
 
-  openExplanationModal() {
-    // open modal
-    console.log('open modal')
-    ++this.currentIndex;
+  openExplanationModal(explanationText) {
+    const ansRef = this.modalService.open(AnswerComponent);
+    ansRef.componentInstance.explanation = explanationText;
+    ansRef.result.then(result => {
+      ++this.currentIndex;
+    });
   }
 
 }

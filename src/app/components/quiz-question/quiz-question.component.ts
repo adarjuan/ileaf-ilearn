@@ -14,6 +14,12 @@ import {style, animate, transition, trigger} from '@angular/animations';
       transition(':leave', [
         animate(1000, style({transform: 'translateY(200%)'}))
       ])
+    ]),
+    trigger('shake', [
+      transition(':enter', [
+        style({transform: 'translateY(-100%)'}),
+        animate('1000ms ease-in', style({transform: 'translateY(0%)'}))
+      ])
     ])
   ],
   
@@ -28,10 +34,23 @@ export class QuizQuestionComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkIfCorrectAnswer(choice) {
-    if (choice.is_correct) {
-      this.correctAnswerChosen.emit();
+  wrongAnswer = -1;
+
+  checkIfCorrectAnswer(choice, index) {
+    if (this.wrongAnswer != index) {
+      if (choice.is_correct) {
+        this.correctAnswerChosen.emit();
+      } else {
+        this.wrongAnswer = index;
+        setTimeout( () => { this.wrongAnswer = -1; }, 800);
+      }
     }
   }
 
+  afterWrongAnswer() {
+    this.wrongAnswer = -1;
+  }
+
 }
+
+// ../../assets/imgs/

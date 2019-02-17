@@ -4,5 +4,5 @@
   <quiz-question *ngIf="i == currentIndex"
     [questionData]="question"
     [ngClass]
-    (correctAnswerChosen)=openExplanationModal()></quiz-question>
+    (correctAnswerChosen)=openExplanationModal(question.explanation)></quiz-question>
 </div>

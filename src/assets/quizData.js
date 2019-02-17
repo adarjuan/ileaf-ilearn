@@ -6,22 +6,22 @@ var data =
         [
             {
                 text: "Wind",
-                img_path: "../../assets/images/Q1_MC1",
+                img_path: "../../assets/images/Q1_MC1.png",
                 correct_answer: false
             },
             {
                 text: "Fossil fuels",
-                img_path: "../../assets/images/Q1_A",
+                img_path: "../../assets/images/Q1_A.png",
                 correct_answer: true
             },
             {
                 text: "Hydroelectric",
-                img_path: "../../assets/images/Q1_MC2",
+                img_path: "../../assets/images/Q1_MC2.png",
                 correct_answer: false
             },
             {
                 text: "Biomass",
-                img_path: "../../assets/images/Q1_MC3",
+                img_path: "../../assets/images/Q1_MC3.png",
                 correct_answer: false
             }
         ],
@@ -33,22 +33,22 @@ var data =
         [
             {
                 text: "Milk jug",
-                img_path: "../../assets/images/Q2_A",
+                img_path: "../../assets/images/Q2_A.png",
                 correct_answer: true
             },
             {
                 text: "Water bottle",
-                img_path: "../../assets/images/Q2_MC1",
+                img_path: "../../assets/images/Q2_MC1.png",
                 correct_answer: false
             },
             {
                 text: "Peanut butter jar",
-                img_path: "../../assets/images/Q2_MC2",
+                img_path: "../../assets/images/Q2_MC2.png",
                 correct_answer: false
             },
             {
                 text: "Plastic bag",
-                img_path: "../../assets/images/Q2_MC3",
+                img_path: "../../assets/images/Q2_MC3.png",
                 correct_answer: false
             }
         ],
@@ -60,22 +60,22 @@ var data =
         [
             {
                 text: "Plastic utensils",
-                img_path: "../../assets/images/Q3_MC1",
+                img_path: "../../assets/images/Q3_MC1.png",
                 correct_answer: false
             },
             {
                 text: "Chip bag",
-                img_path: "../../assets/images/Q3_MC2",
+                img_path: "../../assets/images/Q3_MC2.png",
                 correct_answer: false
             },
             {
                 text: "Cereal box",
-                img_path: "../../assets/images/Q3_MC3",
+                img_path: "../../assets/images/Q3_MC3.png",
                 correct_answer: false
             },
             {
                 text: "Banana peel",
-                img_path: "../../assets/images/Q3_A",
+                img_path: "../../assets/images/Q3_A.png",
                 correct_answer: true
             }
         ],
@@ -87,22 +87,22 @@ var data =
         [
             {
                 text: "Glass bottle",
-                img_path: "../../assets/images/Q4_MC1",
+                img_path: "../../assets/images/Q4_MC1.png",
                 correct_answer: false
             },
             {
                 text: "Plastic straw",
-                img_path: "../../assets/images/Q4_A",
+                img_path: "../../assets/images/Q4_A.png",
                 correct_answer: true
             },
             {
                 text: "Tin can",
-                img_path: "../../assets/images/Q4_MC2",
+                img_path: "../../assets/images/Q4_MC2.png",
                 correct_answer: false
             },
             {
                 text: "Soda bottle",
-                img_path: "../../assets/images/Q4_MC3",
+                img_path: "../../assets/images/Q4_MC3.png",
                 correct_answer: false
             }
         ],
@@ -141,22 +141,22 @@ var data =
         [
             {
                 text: "Plastic bag",
-                img_path: "../../assets/images/Q6_MC1",
+                img_path: "../../assets/images/Q6_MC1.png",
                 correct_answer: false
             },
             {
                 text: "Chip bag",
-                img_path: "../../assets/images/Q6_MC2",
+                img_path: "../../assets/images/Q6_MC2.png",
                 correct_answer: false
             },
             {
                 text: "Styrofoam",
-                img_path: "../../assets/images/Q6_A",
+                img_path: "../../assets/images/Q6_A.png",
                 correct_answer: true
             },
             {
                 text: "Soda bottle",
-                img_path: "../../assets/images/Q6_MC3",
+                img_path: "../../assets/images/Q6_MC3.png",
                 correct_answer: false
             }
         ],
@@ -222,25 +222,27 @@ var data =
         [
             {
                 text: "Tea bag",
-                img_path: "../../assets/images/Q9_MC1",
+                img_path: "../../assets/images/Q9_MC1.png",
                 correct_answer: false
             },
             {
                 text: "Juice carton",
-                img_path: "../../assets/images/Q9_MC2",
+                img_path: "../../assets/images/Q9_MC2.png",
                 correct_answer: false
             },
             {
                 text: "Aluminum foil",
-                img_path: "../../assets/images/Q9_MC3",
+                img_path: "../../assets/images/Q9_MC3.png",
                 correct_answer: false
             },
             {
                 text: "Diaper",
-                img_path: "../../assets/images/Q9_A",
+                img_path: "../../assets/images/Q9_A.png",
                 correct_answer: true
             }
         ],
         explanation: "Single use diapers and hygiene products cannot be recycled or composted. They take centuries to break down. To dispose of them, place them in a tightly shut plastic bag before throwing them in the waste bin."
     } 
 ];
+
+export { data }

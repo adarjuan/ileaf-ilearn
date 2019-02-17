@@ -12,7 +12,6 @@ import { ProgressPlantComponent } from './components/progress-plant/progress-pla
 import { CongratsComponent } from './components/congrats/congrats.component';
 import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
 import { AnswerComponent } from './components/answer/answer.component';
-import { ChooseTerrariumModalComponent } from './components/choose-terrarium-modal/choose-terrarium-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { ChooseTerrariumModalComponent } from './components/choose-terrarium-mod
     CongratsComponent,
     QuizQuestionComponent,
     AnswerComponent,
-    ChooseTerrariumModalComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -39,7 +37,6 @@ import { ChooseTerrariumModalComponent } from './components/choose-terrarium-mod
   ],
   entryComponents: [
     AnswerComponent,
-    ChooseTerrariumModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

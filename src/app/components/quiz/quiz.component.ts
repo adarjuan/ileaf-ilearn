@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { AnswerComponent } from '../answer/answer.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -10,6 +11,9 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+  @ViewChild('plant') progressPlant;
+
+  loadImg: boolean = true;
 
   constructor(private modalService: NgbModal) {}
 
@@ -19,6 +23,11 @@ export class QuizComponent implements OnInit {
   open() {
     const ansRef = this.modalService.open(AnswerComponent);
     ansRef.componentInstance.explanation = 'YEAHH';
+  }
+
+  dummy()
+  {
+    this.progressPlant.grow();
   }
 
   

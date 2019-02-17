@@ -6,22 +6,22 @@ var data =
         [
             {
                 text: "Wind",
-                img_path: "",
+                img_path: "../../assets/images/Q1_MC1",
                 correct_answer: false
             },
             {
                 text: "Fossil fuels",
-                img_path: "",
+                img_path: "../../assets/images/Q1_A",
                 correct_answer: true
             },
             {
                 text: "Hydroelectric",
-                img_path: "",
+                img_path: "../../assets/images/Q1_MC2",
                 correct_answer: false
             },
             {
                 text: "Biomass",
-                img_path: "",
+                img_path: "../../assets/images/Q1_MC3",
                 correct_answer: false
             }
         ],
@@ -33,22 +33,22 @@ var data =
         [
             {
                 text: "Milk jug",
-                img_path: "",
+                img_path: "../../assets/images/Q2_A",
                 correct_answer: true
             },
             {
                 text: "Water bottle",
-                img_path: "",
+                img_path: "../../assets/images/Q2_MC1",
                 correct_answer: false
             },
             {
                 text: "Peanut butter jar",
-                img_path: "",
+                img_path: "../../assets/images/Q2_MC2",
                 correct_answer: false
             },
             {
                 text: "Plastic bag",
-                img_path: "",
+                img_path: "../../assets/images/Q2_MC3",
                 correct_answer: false
             }
         ],
@@ -59,23 +59,23 @@ var data =
         choices:
         [
             {
-                text: "Plastic fork",
-                img_path: "",
+                text: "Plastic utensils",
+                img_path: "../../assets/images/Q3_MC1",
                 correct_answer: false
             },
             {
                 text: "Chip bag",
-                img_path: "",
+                img_path: "../../assets/images/Q3_MC2",
                 correct_answer: false
             },
             {
                 text: "Cereal box",
-                img_path: "",
+                img_path: "../../assets/images/Q3_MC3",
                 correct_answer: false
             },
             {
-                text: "Banana peeling",
-                img_path: "",
+                text: "Banana peel",
+                img_path: "../../assets/images/Q3_A",
                 correct_answer: true
             }
         ],
@@ -87,22 +87,22 @@ var data =
         [
             {
                 text: "Glass bottle",
-                img_path: "",
+                img_path: "../../assets/images/Q4_MC1",
                 correct_answer: false
             },
             {
                 text: "Plastic straw",
-                img_path: "",
+                img_path: "../../assets/images/Q4_A",
                 correct_answer: true
             },
             {
                 text: "Tin can",
-                img_path: "",
+                img_path: "../../assets/images/Q4_MC2",
                 correct_answer: false
             },
             {
                 text: "Soda bottle",
-                img_path: "",
+                img_path: "../../assets/images/Q4_MC3",
                 correct_answer: false
             }
         ],
@@ -141,22 +141,22 @@ var data =
         [
             {
                 text: "Plastic bag",
-                img_path: "",
+                img_path: "../../assets/images/Q6_MC1",
                 correct_answer: false
             },
             {
                 text: "Chip bag",
-                img_path: "",
+                img_path: "../../assets/images/Q6_MC2",
                 correct_answer: false
             },
             {
                 text: "Styrofoam",
-                img_path: "",
+                img_path: "../../assets/images/Q6_A",
                 correct_answer: true
             },
             {
                 text: "Soda bottle",
-                img_path: "",
+                img_path: "../../assets/images/Q6_MC3",
                 correct_answer: false
             }
         ],
@@ -221,23 +221,23 @@ var data =
         choices:
         [
             {
-                text: "Tea bags",
-                img_path: "",
+                text: "Tea bag",
+                img_path: "../../assets/images/Q9_MC1",
                 correct_answer: false
             },
             {
                 text: "Juice carton",
-                img_path: "",
+                img_path: "../../assets/images/Q9_MC2",
                 correct_answer: false
             },
             {
-                text: "Tin foil",
-                img_path: "",
+                text: "Aluminum foil",
+                img_path: "../../assets/images/Q9_MC3",
                 correct_answer: false
             },
             {
-                text: "Diapers",
-                img_path: "",
+                text: "Diaper",
+                img_path: "../../assets/images/Q9_A",
                 correct_answer: true
             }
         ],

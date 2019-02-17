@@ -1,3 +1,8 @@
-<p>
-  this is the quiz component!
-</p>
+
+
+<div *ngFor="let question of testQuestionsArray; let i = index;">
+  <quiz-question *ngIf="i == currentIndex"
+    [questionData]="question"
+    [ngClass]
+    (correctAnswerChosen)=openExplanationModal()></quiz-question>
+</div>

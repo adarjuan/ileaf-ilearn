@@ -1,0 +1,15 @@
+
+<div  [@fadeInOut]>
+    <h3>{{ questionData.question }}</h3>
+
+    <div class="choice-grid">
+    
+      <div class="choice-wrapper"
+        *ngFor="let choice of questionData.choices"
+        (click)="checkIfCorrectAnswer(choice)">
+          <p>{{ choice.text }}</p>
+          <img [src]=choice.img_path width=300>
+      </div>
+    
+    </div>
+</div>

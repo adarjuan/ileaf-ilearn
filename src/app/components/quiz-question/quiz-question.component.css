@@ -1,0 +1,12 @@
+
+* {
+    text-align: center;
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 50%;
+    margin: auto;
+    grid-gap: 30px;
+}

@@ -1,0 +1,15 @@
+/* 
+.move-down {
+    -webkit-animation: mover 1s;
+    animation: mover 1s;
+}
+
+@-webkit-keyframes .move-down {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(200%); }
+}
+
+@keyframes .move-down {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(200%); }
+} */

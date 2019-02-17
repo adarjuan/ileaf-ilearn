@@ -30,10 +30,12 @@ export class TerrariumComponent implements OnInit {
   }
 
   selectedTera: Tera;
+
   teraOnSelect(t: Tera): void {
     this.selectedTera = t;
 
   }
+  
   selectedPlant: Plant;
   plantOnSelect(p: Plant): void {
     this.selectedPlant = p;

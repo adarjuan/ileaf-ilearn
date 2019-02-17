@@ -14,25 +14,59 @@
 
 <congrats *ngIf="showCongratsPage"></congrats>
 
-<!-- Choose Terrarium Modal -->
-<div [@fadeInOut] id="chooseTerrariumModal" class="modal">
+<!-- Terrarium Modal -->
+<div [@fadeInOut] id="terrariumModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
         <h4 class="modal-title">Before you learn more...</h4>
       </div>
       <div class="modal-body">
-        <p>Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
-        <div id="selectedTerrariumBowl"></div>
-        <div class="terrariumBowlOptions">
-            <div *ngFor="let bowl of terrariumBowls" class="terrariumBowlOption">
+        <p *ngIf="currentIndex < 0">Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
+
+        <terrarium-canvas 
+          [teraOption]="selectedTera"
+          [plantOption]="selectedPlant"></terrarium-canvas>
+        
+        <div *ngIf="currentIndex < 0" class="terrariumBowlOptions">
+            <div *ngFor="let tera of teras" 
+                class="terrariumBowlOption" 
+                [class.selected]="tera === selectedTera"
+                (click)="teraOnSelect(tera)">
+                    <img [src] = "tera.imgsrc" width=200 style="margin: auto">
             </div>
         </div>
+
+        <div *ngIf="currentIndex > 0" class="plantOptions">
+            <div *ngFor="let plant of plants" 
+                [class.selected]="plant === selectedPlant"
+                (click)="plantOnSelect(plant)">
+                    <img [src] = "plant.imgsrc" width=150 >
+            </div>
+        </div>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="closeChooseTerrariumModal()">Close</button>
+        <button type="button" 
+          class="btn btn-outline-dark" 
+          (click)="closeTerrariumModal()">Close</button>
       </div>
   </div>
 </div>
+
+<!-- <table>
+    <tr>
+      <th *ngFor="let plant of plants"
+        [class.selected]="plant === selectedPlant"
+        (click)="plantOnSelect(plant)">
+        <img [src] = "plant.imgsrc" height=200px >
+      </th>
+    </tr>
+    <tr>
+      <th *ngFor="let plant of plants">
+        <span class="badge">{{plant.name}}</span>
+      </th>
+    </tr>
+  </table> -->
 
 <!-- Choose Plant Modal -->
 <div [@fadeInOut] id="choosePlantModal" class="modal">
@@ -41,8 +75,7 @@
           <h4 class="modal-title">Add a Plant!</h4>
         </div>
         <div class="modal-body">
-          <p>Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
-          <div id="selectedTerrariumBowl"></div>
+
           <div class="terrariumBowlOptions">
               <div *ngFor="let bowl of terrariumBowls" class="terrariumBowlOption">
               </div>

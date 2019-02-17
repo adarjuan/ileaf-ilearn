@@ -14,22 +14,20 @@
   </tr>
 </table>
 
-
-
 <table>
-    <tr>
-      <th *ngFor="let plant of plants"
-        [class.selected]="plant === selectedPlant"
-        (click)="plantOnSelect(plant)">
-        <img [src] = "plant.imgsrc" height=200px >
-      </th>
-    </tr>
-    <tr>
-      <th *ngFor="let plant of plants">
-        <span class="badge">{{plant.name}}</span>
-      </th>
-    </tr>
-  </table>
+  <tr>
+    <th *ngFor="let plant of plants"
+      [class.selected]="plant === selectedPlant"
+      (click)="plantOnSelect(plant)">
+      <img [src] = "plant.imgsrc" height=200px >
+    </th>
+  </tr>
+  <tr>
+    <th *ngFor="let plant of plants">
+      <span class="badge">{{plant.name}}</span>
+    </th>
+  </tr>
+</table>
 
   
-<app-terrarium-canvas [plantOption]="selectedPlant" [teraOption]="selectedTera"></app-terrarium-canvas>
+<terrarium-canvas [plantOption]="selectedPlant" [teraOption]="selectedTera"></terrarium-canvas>

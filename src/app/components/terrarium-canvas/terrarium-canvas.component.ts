@@ -3,7 +3,7 @@ import { Plant } from '../terrarium/plant';
 import * as p5 from 'p5';
 
 @Component({
-  selector: 'app-terrarium-canvas',
+  selector: 'terrarium-canvas',
   templateUrl: './terrarium-canvas.component.html',
   styleUrls: ['./terrarium-canvas.component.css']
 })
@@ -19,8 +19,8 @@ ngOnInit() {
 }
 
 sketch = (p: any) => {
-    var x = 50;
-    var y = 0;
+    var x = 1000;
+    var y = 300;
     var startX = 0;
     var startY = 0;
     var plantSrcs = ["assets/images/plant1.PNG", "assets/images/plant2.PNG", "assets/images/plant3.PNG",
@@ -29,6 +29,7 @@ sketch = (p: any) => {
     var plantImages = [];
     var teraImages = [];
     var plantIndx;
+    var canvas;
     
 
     p.preload = () => {
@@ -43,7 +44,8 @@ sketch = (p: any) => {
     }
     
     p.setup = () => { 
-      p.createCanvas( p.windowWidth, p.windowHeight); 
+      canvas = p.createCanvas( 600, 400);
+      canvas.parent("terrarium");
     } 
     
     p.draw = () => { 
@@ -54,6 +56,7 @@ sketch = (p: any) => {
       }
       if (this.plantOption != null)
       {
+        console.log(this.plantOption.name);
         plantIndx = this.plantOption.id - 1;
         p.image(plantImages[plantIndx], x, y);
       }

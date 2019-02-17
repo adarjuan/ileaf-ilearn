@@ -1,11 +1,11 @@
 <div [@fadeInOut]>
-  <div class="modal-header">
-      <h4 class="modal-title">CORRECT!</h4>
-    </div>
-    <div class="modal-body">
-      <p>{{ explanation }}</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
-    </div>
+  <div class="modal-header" id="modal-hd">
+    <h4 class="modal-title" >CORRECT!</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{ explanation }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" id="ans-close" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+  </div>
 </div>

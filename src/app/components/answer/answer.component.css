@@ -1,0 +1,15 @@
+
+.modal-header, .modal-footer
+{
+    background-color: rgb(157, 218, 77);
+}
+
+#ans-close
+{
+    background-color: rgba(248, 220, 102, 1);
+}
+
+#modal-hd
+{
+    text-align: center;
+}

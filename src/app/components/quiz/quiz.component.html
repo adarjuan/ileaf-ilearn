@@ -1,4 +1,4 @@
-
+<button id="home-button" [routerLink]="['']"><i class="fas fa-home"></i> HOME</button>
 
 <div *ngIf="!showCongratsPage">
   <div *ngFor="let question of quizData; let i = index;">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="closeChooseTerrariumModal()">Close</button>
+        <button type="button" id="terra-close" class="btn btn-outline-dark" (click)="closeChooseTerrariumModal()">Close</button>
       </div>
   </div>
 </div>
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="closeChoosePlantModal()">Close</button>
+          <button type="button" id="plant-close" class="btn btn-outline-dark" (click)="closeChoosePlantModal()">Close</button>
         </div>
   </div>
 </div>

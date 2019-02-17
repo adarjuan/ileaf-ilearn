@@ -93,7 +93,11 @@ export class QuizComponent implements OnInit {
   closeTerrariumModal() {
     this.canvasVisible = false;
     document.getElementById('terrariumModal').style.display = "none";
+    console.log('closing')
 
+    if (this.showCongratsPage) {
+      return;
+    }
     if (this.currentIndex < 0) {
       this.currentIndex = 0; // show first question
     } else {

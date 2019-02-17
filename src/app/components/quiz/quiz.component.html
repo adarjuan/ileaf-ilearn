@@ -19,13 +19,11 @@
   <div class="modal-content">
     <div class="modal-header">
         <h4 [hidden]="currentIndex > 0" class="modal-title">Before you learn more...</h4>
+        <h4 *ngIf="currentIndex > 0 && !showCongratsPage" class="modal-title">Add a plant! (click on a plant to add it)</h4>
         <h4 [hidden]="!showCongratsPage" class="modal-title">Congratulations! You completed the quiz!</h4>
       </div>
       <div class="modal-body">
         <p *ngIf="currentIndex < 0">Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
-        <p *ngIf="currentIndex > 0 && !showCongratsPage">
-          Add a plant
-        </p>
         <p *ngIf="showCongratsPage">Here is your finished terrarium (it looks beautiful)</p>
 
         <terrarium-canvas [canvasVisible]="canvasVisible"
@@ -40,7 +38,6 @@
             </div>
         </div>
 
-        <p *ngIf="currentIndex > 0 && !showCongratsPage">Click on a plant to add it</p>
         <div [hidden]="currentIndex < 0 || showCongratsPage" class="plantOptions">
             <div *ngFor="let plant of plants" 
                 [class.selected]="plant === selectedPlant"
@@ -50,10 +47,15 @@
         </div>
 
       </div>
-      <div *ngIf="!showCongratsPage" class="modal-footer">
+      <div class="modal-footer">
         <button type="button" 
           class="btn btn-outline-dark" 
           (click)="closeTerrariumModal()">Done</button>
       </div>
   </div>
+</div>
+
+<div *ngIf="showCongratsPage">
+  <img src="../../assets/images/summary_page.png" 
+  style="margin: auto; width: 60%; display: block;">
 </div>

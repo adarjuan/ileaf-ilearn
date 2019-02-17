@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+h3 {
+  width: 80%;
+  margin: auto;
+}
+
 .choice-grid {
     display: grid;
     grid-template-columns: auto auto;
@@ -19,6 +24,11 @@
   width: 200px; 
   height: 200px; 
   object-fit: contain;
+  transition: 0.4s;
+}
+
+.choice-img-text p {
+  font-size: 18px;
 }
 
 .choice-img-text:hover .choice-img {
@@ -26,7 +36,6 @@
   width: 230px; 
   height: 230px; 
   object-fit: contain;
-  transition: 0.4s;
 }
 
 .wrapper-lg {
@@ -49,12 +58,12 @@
   width: 250px;
   font-weight: bold;
   height: 100px;
+  transition: 0.4s;
 }
 
 .choice-text:hover {
   width: 280px;
   height: 110px;
-  transition: 0.4s;
   cursor: pointer;
 }
 

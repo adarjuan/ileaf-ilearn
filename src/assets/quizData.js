@@ -1,5 +1,4 @@
-var data =
-[
+var data = [
     {//#1
         question: "Which of the following is NOT a type of renewable energy?",
         choices:
@@ -82,33 +81,6 @@ var data =
         explanation: "Most food leftovers can be composted, which reduces landfill waste."
     },
     {//#4
-        question: "Which of the following does NOT belong in the recycling bin?",
-        choices:
-        [
-            {
-                text: "Glass bottle",
-                img_path: "../../assets/images/Q4_MC1.png",
-                correct_answer: false
-            },
-            {
-                text: "Plastic straw",
-                img_path: "../../assets/images/Q4_A.png",
-                correct_answer: true
-            },
-            {
-                text: "Tin can",
-                img_path: "../../assets/images/Q4_MC2.png",
-                correct_answer: false
-            },
-            {
-                text: "Soda bottle",
-                img_path: "../../assets/images/Q4_MC3.png",
-                correct_answer: false
-            }
-        ],
-        explanation: "The problem with straws and eating utensils is that they're small and bendable. They can’t be recycled because they fall into the cracks and crevices of the recycling machinery."
-    },
-    {//#5
         question: "What tip can you follow to conserve water?",
         choices:
         [
@@ -135,7 +107,61 @@ var data =
         ],
         explanation: "More than 2,400 gallons of water are needed to produce 1 pound of meat."
     },
+    {//#5
+        question: "Which of the following does NOT belong in the recycling bin?",
+        choices:
+        [
+            {
+                text: "Glass bottle",
+                img_path: "../../assets/images/Q4_MC1.png",
+                correct_answer: false
+            },
+            {
+                text: "Plastic straw",
+                img_path: "../../assets/images/Q4_A.png",
+                correct_answer: true
+            },
+            {
+                text: "Tin can",
+                img_path: "../../assets/images/Q4_MC2.png",
+                correct_answer: false
+            },
+            {
+                text: "Soda bottle",
+                img_path: "../../assets/images/Q4_MC3.png",
+                correct_answer: false
+            }
+        ],
+        explanation: "The problem with straws and eating utensils is that they're small and bendable. They can’t be recycled because they fall into the cracks and crevices of the recycling machinery."
+    },
     {//#6
+        question: "Which of the following does NOT belong?",
+        choices:
+        [
+            {
+                text: "Sunlight",
+                img_path: "",
+                correct_answer: true
+            },
+            {
+                text: "Coal",
+                img_path: "",
+                correct_answer: false
+            },
+            {
+                text: "Petroleum",
+                img_path: "",
+                correct_answer: false
+            },
+            {
+                text: "Natural gas",
+                img_path: "",
+                correct_answer: false
+            }
+        ],
+        explanation: "Most non renewable energy sources are fossil fuels (e.g. coal, petroleum, and natural gas). While fossil fuels are cheap, burning them pollutes our environment."
+    },
+    {//#7
         question: "At the bottom of every plastic container, you can find a triangle with a number inside it. This number is the resin type for the plastic. Which of the following is a #6 plastic?",
         choices:
         [
@@ -162,7 +188,7 @@ var data =
         ],
         explanation: "Resin #6 PS plastic is generally not recyclable and accounts for 35% of US landfill material. PS stands for polystyrene and is found in toys, carry-out containers, and cd cases."
     },
-    {//#7
+    {//#8
         question: "Which one of these tips can you follow to reuse?",
         choices:
         [
@@ -188,33 +214,6 @@ var data =
             }
         ],
         explanation: "Refillable water bottles are long lasting and can be filled with anything, not just water. Therefore being extremely reusable."
-    },
-    {//#8
-        question: "Which of the following does NOT belong?",
-        choices:
-        [
-            {
-                text: "Sunlight",
-                img_path: "",
-                correct_answer: true
-            },
-            {
-                text: "Coal",
-                img_path: "",
-                correct_answer: false
-            },
-            {
-                text: "Petroleum",
-                img_path: "",
-                correct_answer: false
-            },
-            {
-                text: "Natural gas",
-                img_path: "",
-                correct_answer: false
-            }
-        ],
-        explanation: "Most non renewable energy sources are fossil fuels (e.g. coal, petroleum, and natural gas). While fossil fuels are cheap, burning them pollutes our environment."
     },
     {//#9
         question: "Which of the following belongs in the waste bin?",

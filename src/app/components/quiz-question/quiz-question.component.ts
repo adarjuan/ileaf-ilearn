@@ -6,13 +6,13 @@ import {style, animate, transition, trigger} from '@angular/animations';
   templateUrl: './quiz-question.component.html',
   styleUrls: ['./quiz-question.component.css'],
   animations: [
-    trigger('fadeInOut', [
+    trigger('slideIn', [
       transition(':enter', [
         style({transform: 'translateY(-100%)'}),
-        animate('1000ms ease-in', style({transform: 'translateY(0%)'}))
+        animate('800ms ease-in', style({transform: 'translateY(0%)'}))
       ]),
       transition(':leave', [
-        animate(1000, style({transform: 'translateY(200%)'}))
+        animate(1300, style({transform: 'translateY(200%)'}))
       ])
     ]),
     trigger('shake', [

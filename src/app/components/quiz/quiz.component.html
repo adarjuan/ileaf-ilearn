@@ -1,32 +1,21 @@
 
 
-<div *ngFor="let question of quizData; let i = index;">
-  <quiz-question *ngIf="i == currentIndex"
-    [questionData]="question"
-    [ngClass]
-    (correctAnswerChosen)=openExplanationModal(question.explanation)>
-  </quiz-question>
+<div *ngIf="!showCongratsPage">
+  <div *ngFor="let question of quizData; let i = index;">
+    <quiz-question *ngIf="i == currentIndex"
+      [questionData]="question"
+      [ngClass]
+      (correctAnswerChosen)=openExplanationModal(question.explanation)>
+    </quiz-question>
+  </div>
+  
+  <progress-plant #plant [@fadeInOut]></progress-plant>
 </div>
 
-<progress-plant #plant></progress-plant>
+<congrats *ngIf="showCongratsPage"></congrats>
 
 <!-- Choose Terrarium Modal -->
-<div id="chooseTerrariumModal" class="modal">
-    <!-- <div class="modal-header">
-        <h4 class="modal-title">Before you start learn more...</h4>
-      </div>
-      <div class="modal-body">
-        <p>Choose your terrarium bowl! (You'll get to decorate it once you complete some questions!)</p>
-        <div id="selectedTerrariumBowl"></div>
-        <div class="terrariumBowlOptions">
-            <div *ngFor="let bowl of terrariumBowls" class="terrariumBowlOption">
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="closeChooseTerrariumModal()">Close</button>
-      </div> -->
-
+<div [@fadeInOut] id="chooseTerrariumModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
         <h4 class="modal-title">Before you learn more...</h4>
@@ -46,7 +35,7 @@
 </div>
 
 <!-- Choose Plant Modal -->
-<div id="choosePlantModal" class="modal">
+<div [@fadeInOut] id="choosePlantModal" class="modal">
   <div class="modal-content">
       <div class="modal-header">
           <h4 class="modal-title">Add a Plant!</h4>

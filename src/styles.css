@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-<<<<<<< HEAD
-@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
-=======
 @import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
 
 body
@@ -10,4 +7,3 @@ body
     /* background-color: rgb(250, 241, 189); */
     background-color: #F9E784;
 }
->>>>>>> 3c56d17e618ff0bf8c46bc47516db4cf6e944a6b

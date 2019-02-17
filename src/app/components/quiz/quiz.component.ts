@@ -12,20 +12,23 @@ import { data } from "../../../assets/quizData";
   styleUrls: ['./quiz.component.css'],
   animations: [
     trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(200, style({ opacity: 1 })) 
+      ]),
       transition(':leave', [
-        animate('1000ms ease-in', style({transform: 'translateY(200%)'}))
+        animate(200, style({ opacity: 0 })) 
       ])
-    ])
+    ]),
   ],
 })
 
 export class QuizComponent implements OnInit {
   @ViewChild('plant') progressPlant;
 
-  loadImg: boolean = true;
-
   terrariumContainer;
   terrariumBowls = [1,2,3,4];
+  showCongratsPage = false;
 
   quizData = data;
 
@@ -46,7 +49,7 @@ export class QuizComponent implements OnInit {
         console.log('plant ready')
         this.openChoosePlantModal();
       } else {
-        ++this.currentIndex;
+        this.nextQuestion();
       }
     });
   }
@@ -66,8 +69,17 @@ export class QuizComponent implements OnInit {
 
   closeChoosePlantModal() {
     document.getElementById('choosePlantModal').style.display = "none";
-    ++this.currentIndex;
+    this.nextQuestion();
     this.progressPlant.resetPlant();
+  }
+
+  nextQuestion() {
+    if (this.currentIndex < 8) {
+      ++this.currentIndex;
+    } else {
+      this.showCongratsPage = true;
+    }
+      
   }
 
 }

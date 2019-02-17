@@ -68,8 +68,6 @@ sketch = (p: any) => {
       if (this.plantOption != null) {
         plantIndx = this.plantOption.id - 1;
         var img = plantImages[plantIndx];
-        console.log(x, y)
-        
         p.image(img, x, y, img.width / 3, img.height / 3);
       }
 
@@ -101,6 +99,13 @@ sketch = (p: any) => {
         var diffy = startY - p.mouseY;
         y = y - diffy;
         startY = p.mouseY;
+      }
+    }
+
+    p.keyTyped = () => {
+      if (p.key == 'p') 
+      {
+        p.save("terrarium.jpeg");
       }
     }
 

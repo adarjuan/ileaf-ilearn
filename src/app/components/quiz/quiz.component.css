@@ -29,15 +29,13 @@
     padding: 20px;
 }
 
-<<<<<<< HEAD
-.terrariumBowlOption {
-    background-color: rgb(223, 248, 246);
-    border: 1px solid rgb(203, 224, 223);
-=======
+.plant:hover {
+  cursor: pointer;
+}
+
 .plantOptions {
   display: grid;
   grid-template-columns: repeat(3, auto);
->>>>>>> aafee5696ab9889076c5c31fa5bf4bd91f749dbf
 }
 
 .modal {

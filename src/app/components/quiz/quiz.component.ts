@@ -112,13 +112,8 @@ export class QuizComponent implements OnInit {
     } else {
       this.showCongratsPage = true;
       this.openTerrariumModal();
-      this.showCongratsPagee();
     }
       
-  }
-
-  showCongratsPagee() {
-
   }
 
 }

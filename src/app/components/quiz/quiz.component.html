@@ -1,6 +1,6 @@
 
 
-<div *ngFor="let question of testQuestionsArray; let i = index;">
+<div *ngFor="let question of quizData; let i = index;">
   <quiz-question *ngIf="i == currentIndex"
     [questionData]="question"
     [ngClass]

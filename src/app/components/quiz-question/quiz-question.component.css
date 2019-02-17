@@ -7,8 +7,55 @@
     display: grid;
     grid-template-columns: auto auto;
     width: 50%;
-    margin: auto;
+    margin: 50px auto;
     grid-gap: 30px;
+}
+
+.choice-text {
+  margin: auto;
+}
+
+.choice-img {
+  width: 200px; 
+  height: 200px; 
+  object-fit: contain;
+}
+
+.choice-img-text:hover .choice-img {
+  cursor: pointer;
+  width: 230px; 
+  height: 230px; 
+  object-fit: contain;
+  transition: 0.4s;
+}
+
+.wrapper-lg {
+  width: 300px; 
+  height: 300px;
+}
+
+.wrapper-sm {
+  margin: auto;
+  width: 300px;
+  height: 200px;
+}
+
+.choice-text {
+  font-size: 20px;
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 10px;
+  background: #9dc385d9;
+  width: 250px;
+  font-weight: bold;
+  height: 100px;
+}
+
+.choice-text:hover {
+  width: 280px;
+  height: 110px;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .shake {

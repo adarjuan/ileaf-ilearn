@@ -1,0 +1,15 @@
+
+<div class="modal-header">
+    <h4 class="modal-title">Before you start learn more...</h4>
+  </div>
+  <div class="modal-body">
+    <p>Choose your terrarium bowl! (You'll get to fill it once you complete some questions!)</p>
+    <div id="selectedTerrariumBowl"></div>
+    <div class="terrariumBowlOptions">
+        <div *ngFor="let bowl of terrariumBowls" class="terrariumBowlOption">
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+  </div>

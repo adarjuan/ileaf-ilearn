@@ -1,10 +1,9 @@
+import { ChooseTerrariumModalComponent } from './../choose-terrarium-modal/choose-terrarium-modal.component';
 
 import {style, animate, transition, trigger} from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
 import { AnswerComponent } from '../answer/answer.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-
 
 @Component({
   selector: 'quiz',
@@ -18,9 +17,10 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     ])
   ],
 })
+
 export class QuizComponent implements OnInit {
 
-  show = true;
+  terrariumContainer;
 
   testQuestionsArray = [
     {
@@ -103,10 +103,20 @@ export class QuizComponent implements OnInit {
     }, 
   ]
 
-  currentIndex = 0;
+  currentIndex = -1;
   constructor(private modalService: NgbModal) {}
 
   ngOnInit() {
+    // timeout is workaround for angular bug
+    setTimeout( () => { this.openChooseTerrariumModal(); }, 100);
+  }
+
+  openChooseTerrariumModal() {
+    const terrRef = this.modalService.open(ChooseTerrariumModalComponent, { size: 'lg' });
+    terrRef.result.then(result => {
+      this.terrariumContainer = result;
+      this.currentIndex = 0; // show first question
+    });
   }
 
   openExplanationModal(explanationText) {

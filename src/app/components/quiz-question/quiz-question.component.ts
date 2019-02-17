@@ -41,14 +41,14 @@ export class QuizQuestionComponent implements OnInit {
       if (choice.is_correct) {
         this.correctAnswerChosen.emit();
       } else {
-        this.wrongAnswer = index;
-        setTimeout( () => { this.wrongAnswer = -1; }, 800);
+        this.shake(index)
       }
     }
   }
 
-  afterWrongAnswer() {
-    this.wrongAnswer = -1;
+  shake(index) {
+    this.wrongAnswer = index;
+    setTimeout( () => { this.wrongAnswer = -1; }, 800);
   }
 
 }

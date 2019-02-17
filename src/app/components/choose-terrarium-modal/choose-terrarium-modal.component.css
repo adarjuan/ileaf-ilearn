@@ -1,0 +1,17 @@
+
+#selectedTerrariumBowl {
+    height: 350px;
+    background: lightblue;
+    margin: 15px;
+}
+
+.terrariumBowlOptions {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+    height: 150px;
+}
+
+.terrariumBowlOption {
+    background-color: aliceblue;
+}

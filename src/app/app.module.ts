@@ -12,6 +12,8 @@ import { ProgressPlantComponent } from './components/progress-plant/progress-pla
 import { CongratsComponent } from './components/congrats/congrats.component';
 import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
 import { AnswerComponent } from './components/answer/answer.component';
+import { TerrariumComponent } from './components/terrarium/terrarium.component';
+import { TerrariumCanvasComponent } from './components/terrarium-canvas/terrarium-canvas.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { AnswerComponent } from './components/answer/answer.component';
     CongratsComponent,
     QuizQuestionComponent,
     AnswerComponent,
+    TerrariumComponent,
+    TerrariumCanvasComponent,
   ],
   imports: [
     NgbModule.forRoot(),
@@ -30,9 +34,7 @@ import { AnswerComponent } from './components/answer/answer.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'quiz', component: QuizComponent },
-      { path: 'answer', component: AnswerComponent},
-      { path: 'congrats', component: CongratsComponent},
+      { path: 'quiz', component: QuizComponent }
     ])
   ],
   entryComponents: [

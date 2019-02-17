@@ -1,5 +1,6 @@
 
 
+<<<<<<< HEAD
 <div *ngFor="let question of testQuestionsArray; let i = index;">
   <quiz-question *ngIf="i == currentIndex"
     [questionData]="question"
@@ -7,3 +8,13 @@
     (correctAnswerChosen)=openExplanationModal(question.explanation)>
   </quiz-question>
 </div>
+=======
+
+<button class="btn btn-lg btn-outline-primary" (click)="open()">Show Answer</button>
+
+<br/>
+<br/>
+<button class="btn btn-outline-dark" (click)="dummy();">Question Completed</button>
+<br/>
+<progress-plant #plant></progress-plant>
+>>>>>>> c639bb07d660c51d7888bd20b90887f66e8f7567

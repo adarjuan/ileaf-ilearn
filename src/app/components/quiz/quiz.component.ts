@@ -1,9 +1,9 @@
-import { ChooseTerrariumModalComponent } from './../choose-terrarium-modal/choose-terrarium-modal.component';
 
 import {style, animate, transition, trigger} from '@angular/animations';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AnswerComponent } from '../answer/answer.component';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ChooseTerrariumModalComponent } from './../choose-terrarium-modal/choose-terrarium-modal.component';
 
 @Component({
   selector: 'quiz',
@@ -19,6 +19,9 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class QuizComponent implements OnInit {
+  @ViewChild('plant') progressPlant;
+
+  loadImg: boolean = true;
 
   terrariumContainer;
 
@@ -124,6 +127,7 @@ export class QuizComponent implements OnInit {
     ansRef.componentInstance.explanation = explanationText;
     ansRef.result.then(result => {
       ++this.currentIndex;
+      this.progressPlant.grow();
     });
   }
 
